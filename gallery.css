@@ -7,25 +7,31 @@ body {
   overflow-x: hidden;
 }
 
-/* Navigation */
+/* ====== Navbar ด้านล่างปุ่มสวย ====== */
 nav {
-  background-color: #ffccd9;
-  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0 20px 0; /* อยู่ด้านล่างเนื้อหา */
 }
 
 nav a {
   text-decoration: none;
-  color: #ff3366;
+  color: #fff;
   font-weight: 600;
-  margin: 0 10px;
-  transition: color 0.3s;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #ff3366, #ff6699);
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  color: #ff6699;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 51, 102, 0.6);
 }
 
-/* Section gallery */
+/* ====== Section gallery ====== */
 #gallery {
   margin: 30px auto;
   max-width: 900px;
@@ -79,13 +85,13 @@ footer {
   margin-top: 30px;
 }
 
-/* Animation */
+/* ====== Animation ====== */
 @keyframes fadeInDown {
   0% {opacity: 0; transform: translateY(-30px);}
   100% {opacity: 1; transform: translateY(0);}
 }
 
-/* หัวใจลอย */
+/* ====== หัวใจลอย ====== */
 .hearts {
   position: fixed;
   top: 0;

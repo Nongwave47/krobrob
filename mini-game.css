@@ -1,25 +1,127 @@
+/* ====== General ====== */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #ffe6f0, #ffd1cc);
   text-align: center;
+  overflow-x: hidden;
 }
 
+/* ====== Navbar ด้านล่าง ====== */
 nav {
-  background-color: #ffccd9;
-  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0 20px 0;
 }
 
 nav a {
   text-decoration: none;
-  color: #ff3366;
+  color: #fff;
   font-weight: 600;
-  margin: 0 10px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #ff3366, #ff6699);
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+  transition: all 0.3s ease;
 }
 
-nav a:hover { color: #ff6699; }
+nav a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 51, 102, 0.6);
+}
 
+/* ====== Section Titles ====== */
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #ff3366;
+  margin: 20px 0;
+}
+
+/* ====== Gallery ====== */
+#gallery {
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 0 10px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* ====== Countdown ====== */
+.countdowns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background-color: #fff0f5;
+  padding: 20px;
+  border-radius: 20px;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.countdown-item:hover {
+  transform: scale(1.05);
+}
+
+.countdown-item h2 {
+  font-family: 'Fredoka One', cursive;
+  color: #ff3366;
+  margin-bottom: 10px;
+}
+
+.countdown-item p {
+  font-size: 1.3em;
+  color: #ff6699;
+  margin-bottom: 10px;
+}
+
+.progress {
+  background-color: #ffd1cc;
+  border-radius: 10px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #ff3366;
+  border-radius: 10px;
+  transition: width 0.5s;
+}
+
+/* ====== Game ====== */
 #game-section h1 {
   font-family: 'Fredoka One', cursive;
   color: #ff3366;
@@ -51,4 +153,44 @@ nav a:hover { color: #ff6699; }
   background-color: #ff6699;
   color: #fff;
   transform: rotateY(180deg);
+}
+
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #ff3366;
+  background-color: #ffe6f0;
+  margin-top: 30px;
+}
+
+/* ====== Hearts / Effects ====== */
+.effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.effect {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  0% {transform: translateY(0) scale(1); opacity: 1;}
+  100% {transform: translateY(-100vh) scale(1.5); opacity: 0;}
+}
+
+/* ====== Animations ====== */
+@keyframes fadeInDown {
+  0% {opacity: 0; transform: translateY(-30px);}
+  100% {opacity: 1; transform: translateY(0);}
 }
