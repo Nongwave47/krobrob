@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #ffe6f0, #ffd1cc);
+  text-align: center;
+}
+
+nav {
+  background-color: #ffccd9;
+  padding: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ff3366;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+nav a:hover { color: #ff6699; }
+
+#game-section h1 {
+  font-family: 'Fredoka One', cursive;
+  color: #ff3366;
+  margin: 20px 0;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #fff0f5;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  transition: transform 0.3s;
+}
+
+.card.flipped {
+  background-color: #ff6699;
+  color: #fff;
+  transform: rotateY(180deg);
+}
