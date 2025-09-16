@@ -33,55 +33,67 @@ nav a:hover {
   font-family: 'Pacifico', cursive;
   font-size: 2.5em;
   color: #ff3366;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .countdowns {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .countdown-item {
-  background-color: #fff0f5;
-  padding: 20px;
-  border-radius: 20px;
-  width: 220px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.countdown-item:hover {
-  transform: scale(1.05);
+  text-align: center;
 }
 
 .countdown-item h2 {
   font-family: 'Fredoka One', cursive;
   color: #ff3366;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.countdown-item p {
-  font-size: 1.3em;
-  color: #ff6699;
-  margin-bottom: 10px;
+/* Circular progress */
+.circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
 }
 
-/* Progress bar */
-.progress {
-  background-color: #ffd1cc;
-  border-radius: 10px;
-  height: 12px;
-  overflow: hidden;
+.circle svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
 }
 
-.progress-bar {
+.circle svg circle {
+  width: 100%;
   height: 100%;
-  width: 0%;
-  background-color: #ff3366;
-  border-radius: 10px;
-  transition: width 0.5s;
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.circle svg circle:first-child {
+  stroke: #ffd1cc; /* Background circle */
+}
+
+.circle svg circle:last-child {
+  stroke: #ff3366; /* Progress circle */
+  stroke-dasharray: 339.292; /* 2 * π * r (r=54) */
+  stroke-dashoffset: 339.292;
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.circle .time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9em;
+  color: #ff6699;
+  font-weight: 600;
 }
 
 /* Effects: หัวใจ/ดอกไม้ลอย */
