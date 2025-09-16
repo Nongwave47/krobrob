@@ -47,7 +47,7 @@ h1 {
 
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 15px;
   padding: 0 10px;
 }
@@ -130,15 +130,15 @@ h1 {
 
 .game-board {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   gap: 15px;
   justify-content: center;
   margin-top: 20px;
 }
 
 .card {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   background-color: #fff0f5;
   border-radius: 15px;
   cursor: pointer;
@@ -193,4 +193,36 @@ footer {
 @keyframes fadeInDown {
   0% {opacity: 0; transform: translateY(-30px);}
   100% {opacity: 1; transform: translateY(0);}
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  .countdown-item {
+    width: 180px;
+  }
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .card {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .countdown-item {
+    width: 140px;
+    padding: 15px;
+  }
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .card {
+    font-size: 1.2em;
+  }
 }
