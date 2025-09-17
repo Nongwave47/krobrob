@@ -134,8 +134,10 @@ header p {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: hidden; /* ป้องกันดันเนื้อหา */
   z-index: 999;
 }
+
 
 .heart {
   position: absolute;
@@ -195,3 +197,4 @@ header p {
     width: 180px;
   }
 }
+
