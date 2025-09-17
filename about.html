@@ -5,11 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เรื่องราวของเรา 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&family=Fredoka+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="about.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #ffd1cc);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0 20px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #ff3366, #ff6699);
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+      transition: all 0.3s ease;
+      font-size: 1em;
+    }
+
+    nav a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 51, 102, 0.6);
+    }
+
+    .back-btn {
+      margin: 20px 0;
+    }
+
+    .back-btn a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(45deg, #ff6699, #ff3366);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-family: 'Fredoka One', cursive;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(255, 102, 153, 0.4);
+      transition: all 0.3s ease;
+      font-size: 1em;
+    }
+
+    .back-btn a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 102, 153, 0.6);
+    }
+
+    #about {
+      margin: 50px auto;
+      max-width: 700px;
+      text-align: left;
+      padding: 0 15px;
+    }
+
+    #about h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      text-align: center;
+      color: #ff3366;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: fadeInDown 1s forwards;
+    }
+
+    .story {
+      background: #ffe6f0;
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .story h2 {
+      font-family: 'Fredoka One', cursive;
+      color: #ff3399;
+      margin-bottom: 10px;
+    }
+
+    .story p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-family: 'Poppins', sans-serif;
+      color: #ff3366;
+      background-color: #ffe6f0;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeInDown {
+      0% {opacity: 0; transform: translateY(-30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      #about h1 { font-size: 2.2em; }
+      .story p { font-size: 1em; }
+      nav a { padding: 8px 15px; font-size: 0.9em; }
+      .back-btn a { padding: 8px 15px; font-size: 0.9em; }
+    }
+
+    @media (max-width: 480px) {
+      #about h1 { font-size: 1.8em; }
+      .story p { font-size: 0.95em; }
+      nav a { padding: 6px 12px; font-size: 0.85em; }
+      .back-btn a { padding: 6px 12px; font-size: 0.85em; }
+    }
+  </style>
 </head>
 <body>
-  <!-- เอฟเฟกต์หัวใจลอย -->
-  <div class="hearts"></div>
 
   <!-- เรื่องราวของเรา -->
   <section id="about">
@@ -34,21 +157,42 @@
   </section>
 
   <nav>
-  <a href="index.html">กลับหน้าแรก</a>
-  <a href="gallery.html">แกลเลอรี</a>
-  <a href="countdown.html">นับถอยหลังครบรอบ</a>
-  <a href="mini-game.html">Fun Game</a>
-
-</nav>
+    <a href="index.html">กลับหน้าแรก</a>
+    <a href="gallery.html">แกลเลอรี</a>
+    <a href="countdown.html">นับถอยหลังครบรอบ</a>
+    <a href="mini-game.html">Fun Game</a>
+  </nav>
 
   <footer>
     <p>เราครบรอบ 1 เดือนแล้ว 🗓️ รักแฟนที่สุดเลย ❤️</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="about.js"></script>
-  <script src="hearts.js"></script>
-  <script src="page-effect.js"></script>
-  <div class="effects"></div>
+  <script>
+    // เลือก story ทุกตัว
+    const stories = document.querySelectorAll('.story');
+
+    function checkStories() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      stories.forEach(story => {
+        const storyTop = story.getBoundingClientRect().top;
+        if (storyTop < triggerBottom) {
+          story.style.opacity = '1';
+          story.style.transform = 'translateY(0)';
+        }
+      });
+
+      // หยุดเช็คเมื่อ story ตัวสุดท้ายโชว์แล้ว
+      const lastStory = stories[stories.length - 1];
+      const lastTop = lastStory.getBoundingClientRect().top;
+      if (lastTop < triggerBottom) {
+        window.removeEventListener('scroll', checkStories);
+      }
+    }
+
+    window.addEventListener('scroll', checkStories);
+    checkStories();
+  </script>
+
 </body>
 </html>
