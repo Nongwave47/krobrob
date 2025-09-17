@@ -1,7 +1,7 @@
-const heartsContainer = document.querySelector(".hearts");
-
-// สร้างหัวใจลอย
 function createHeart() {
+  const heartsNow = heartsContainer.querySelectorAll('.heart').length;
+  if (heartsNow >= 40) return;   // กำหนดสูงสุด เช่น 40 ดวง
+
   const heart = document.createElement("div");
   heart.classList.add("heart");
   heart.style.left = Math.random() * 100 + "vw";
@@ -13,15 +13,3 @@ function createHeart() {
   heartsContainer.appendChild(heart);
   setTimeout(() => heart.remove(), 5000);
 }
-
-const musicBtn = document.getElementById('music-btn');
-const music = document.getElementById('music');
-
-// กำหนดค่าเริ่มต้น
-musicBtn.textContent = '🔊';
-musicBtn.style.backgroundColor = "#ff6b81";
-
-
-
-// เริ่มสร้างหัวใจ ทุก 0.5 วินาที
-setInterval(createHeart, 500);
