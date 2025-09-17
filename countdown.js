@@ -1,4 +1,4 @@
-const startDate = new Date("2025-09-12T00:00:00");
+const startDate = new Date("2025-09-12T01:30:00");
 
 // กำหนดวันครบรอบแต่ละช่วง
 const countdowns = [
