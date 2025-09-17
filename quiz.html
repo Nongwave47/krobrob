@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แบบทดสอบรักแฟน 💖</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- หน้าเริ่ม -->
+  <div id="start-screen" class="screen">
+    <h1>แบบทดสอบรักแฟน 💖</h1>
+    <p>มาลองดูกันว่าคุณจำเรื่องของเราได้ดีแค่ไหน</p>
+    <div class="start-buttons">
+      <button class="btn-about" id="btn-back-home">ย้อนกลับ</button>
+      <button class="btn-start">เริ่มทำแบบทดสอบเลย</button>
+    </div>
+  </div>
+
+  <!-- หน้าคำถาม -->
+  <div id="question-screen" class="screen" style="display:none;">
+    <div id="quiz-container">
+      <div class="question">
+        <h2 id="question-text"></h2>
+        <div id="options-container" class="options"></div>
+      </div>
+      <div class="navigation">
+        <button id="prev-btn">ย้อนกลับ</button>
+        <button id="next-btn">ถัดไป</button>
+        <button id="submit-btn">ส่งคำตอบ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- หน้าผลลัพธ์ -->
+  <div id="result-screen" class="screen" style="display:none;">
+    <h1>ผลลัพธ์ของคุณ</h1>
+    <p id="score-text"></p>
+    <p id="rate-text"></p>
+    <button id="restart-btn">กลับไปหน้าแรก</button>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
