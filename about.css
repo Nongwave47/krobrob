@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;   /* ปิดทั้งเลื่อนขึ้น-ลงและซ้าย-ขวา */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -178,3 +185,4 @@ footer {
     font-size: 0.85em;
   }
 }
+
